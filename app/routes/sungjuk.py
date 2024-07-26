@@ -27,4 +27,4 @@ async def sungjukok(req: Request,     #클라이언트가 가져온 데이터로
     sj = SungJuk(name=name, kor=kor, eng=eng, mat=mat,
                  tot=tot, avg=avg, grd=grd)
     return templates.TemplateResponse('sungjuk/result.html',
-          {'sj': sj, 'request': req})
+                                      {'sj': sj, 'request': req})
