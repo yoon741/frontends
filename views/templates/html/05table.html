@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>테이블 관련 태그</title>
+</head>
+<body>
+    <h1>테이블 관련 태그</h1>
+    <h2>개요</h2>
+    <p>여러 종류의 데이터를 일목요연하게 2차원 형태의 표로
+        나타내기 위해 사용하는 요소</p>
+    <p>table태그로 테이블 시작을</td><td>
+        tr태그로 테이블의 행을</td><td>
+        th태그로 테이블의 제목열을</td><td>
+        td태그로 테이블의 열을</td><td>
+        thead태그로 테이블의 머릿글을</td><td>
+        tbody태그로 테이블의 본문을 나타냄</p>
+    <p>테이블의 각 컬럼에 여러 공통적인 속성을 정의하려면
+        colgroup과 col 태그를 사용해야 함</p>
+    <p>테이블의 디자인적인 요소들은 CSS로 다루는 것을 추천함!</p>
+
+    <h3>성적 테이블</h3>
+    <table border="1" cellpadding="5">
+        <colgroup>
+            <col width="100px" style="text-align: center">
+            <col width="100px" style="text-align: center">
+            <col width="100px" style="text-align: center">
+            <col width="100px" style="text-align: center">
+        </colgroup>
+        <tr>
+            <th>이름</th><th>국어</th><th>영어</th><th>수학</th>
+        </tr>
+        <tr>
+            <td>홍길동</td><td>99</td><td>98</td><td>99</td>
+        </tr>
+        <tr>
+            <td>일지매</td><td>60</td><td>70</td><td>80</td>
+        </tr>
+        <tr>
+            <td>지현</td><td>50</td><td>55</td><td>59</td>
+        </tr>
+    </table>
+
+    <h3>사원 테이블</h3>
+    <table border="1" cellpadding="5" cellspacing="0">
+            <colgroup>
+                <col width="100px" style="text-align: center">
+                <col width="100px" style="text-align: center">
+                <col width="100px" style="text-align: center">
+                <col width="100px" style="text-align: center">
+                <col width="100px" style="text-align: center">
+                <col width="100px" style="text-align: center">
+                <col width="100px" style="text-align: center">
+                <col width="100px" style="text-align: center">
+                <col width="100px" style="text-align: center">
+                <col width="100px" style="text-align: center">
+                <col width="100px" style="text-align: center">
+            </colgroup>
+        <tr align="center" >
+            <th>사원 번호</th><th>이름</th><th>성</th><th>이메일</th><th>전화번호</th><th>입사일</th><th>직책</th><th>급여</th><th>수당</th><th>매니저 번호</th><th>부서 번호</th>
+        </tr>
+        <tr align="center">
+            <td>100</td><td>Steven</td><td>King</td><td>SKING</td><td>515.123.4567</td><td>2003-06-17</td><td>AD_PRES</td><td>24000</td><td>None</td><td>None</td><td>90</td>
+        </tr>
+        <tr align="center">
+            <td>101</td><td>Neena</td><td>Kochhar</td><td>NKOCHHAR</td><td>515.123.4568</td><td>2005-09-21</td><td>AD_VP</td><td>17000</td><td>None</td><td>100</td><td>90</td>
+        </tr>
+
+        <tr align="center">
+            <td>167</td><td>Amit</td><td>Banda</td><td>ABANDA</td><td>011.44.1346.729268</td><td>2008-04-21</td><td>SA_REP</td><td>6200</td><td>0.1</td><td>147</td><td>80</td>
+        </tr >
+        <tr align="center">
+            <td>168</td><td>Lisa</td><td>Ozer</td><td>LOZER</td><td>011.44.1343.929268</td><td>2005-03-11</td><td>SA_REP</td><td>11500</td><td>0.25</td><td>148</td><td>80</td>
+        </tr>
+        <tr align="center">
+            <td>169</td><td>Harrison</td><td>Bloom</td><td>HBLOOM</td><td>011.44.1343.829268</td><td>2006-03-23</td><td>SA_REP</td><td>10000</td><td>0.2</td><td>148</td><td>80</td>
+        </tr>
+    </table>
+
+    <h2>복잡한 표 만들기</h2>
+    <p>복잡한 형태의 표를 만들려면
+    colspan/rowspan 속성을 적절히 사용해야 함</p>
+    <p>colspan은 여러 열을 합쳐 하나의 열을 만드는 것이고
+    rowspan은 여러 행을 합쳐 하나의 행을 만드는 것</p>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <td colspan="5">1</td><!--<td>2</td><td>3</td><td>4</td><td>5</td>-->
+        </tr>
+        <tr>
+            <td rowspan="2">6</td><td rowspan="2">7</td><td rowspan="2">8</td>
+            <td colspan="2" rowspan="2" height="60px">9</td><!--<td>10</td>-->
+        </tr>
+        <tr>
+            <!--<td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>-->
+        </tr>
+        <tr>
+            <td colspan="2" width="50">16</td><!--<td>17</td>-->
+            <td colspan="3" width="75">18</td><!--<td>19</td><td>20</td>-->
+        </tr>
+        <tr>
+            <td colspan="3">21</td><!--<td>22</td>--><!--<td>23</td>-->
+            <td colspan="2">24</td><!--<td>25</td>-->
+        </tr>
+    </table>
+
+</body>
+</html>

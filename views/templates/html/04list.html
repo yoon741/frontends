@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>목록 관련 태그</title>
+</head>
+<body>
+    <h1>목록 관련 태그</h1>
+    <p>개요</p>
+    <p>깔끔한 정보전달을 위해 여러 요소들을
+        일렬로 나열한 명단이나 목록을 의미</p>
+    <p>html에서는 목록을 표현하기 위해
+        순서 없는 목록/순서 있는 목록/정의 목록등을 지원함 </p>
+
+    <h2>순서없는unordered 목록</h2>
+    <p>명단의 요소를 나열할때 기호를 이용하는 목록 형태</p>
+    <p>ul, li태그 등을 이용해서 표현</p>
+    <p>기호의 유형 : circle, square, disc</p>
+
+    <hr>
+    <h3>나의 점심 메뉴</h3>
+    <ul>
+        <li>라면</li>
+        <li>돈까스</li>
+        <li>제육볶음</li>
+        <li>뚝배기불고기</li>
+        <li>민트초코</li>
+    </ul>
+    <ul type="square">
+        <li>라면</li>
+        <li>돈까스</li>
+        <li>제육볶음</li>
+        <li>뚝배기불고기</li>
+        <li>민트초코</li>
+    </ul>
+    <ul type="circle">
+        <li>라면</li>
+        <li>돈까스</li>
+        <li>제육볶음</li>
+        <li>뚝배기불고기</li>
+        <li>민트초코</li>
+    </ul>
+
+    <h2>순서있는ordered 목록</h2>
+    <p>명단의 요소를 나열할때 순서가 있는 기호를 이용하는 목록 형태</p>
+    <p>ol, li태그 등을 이용해서 표현</p>
+    <p>기호의 유형 : decimal, alpha, roman</p>
+
+    <hr>
+    <h3>나의 점심 메뉴</h3>
+    <ol>
+        <li>라면</li>
+        <li>돈까스</li>
+        <li>제육볶음</li>
+        <li>뚝배기불고기</li>
+        <li>민트초코</li>
+    </ol>
+    <ol style="list-style-type: upper-alpha">
+        <li>라면</li>
+        <li>돈까스</li>
+        <li>제육볶음</li>
+        <li>뚝배기불고기</li>
+        <li>민트초코</li>
+    </ol>
+    <ol style="list-style-type: upper-roman">
+        <li>라면</li>
+        <li>돈까스</li>
+        <li>제육볶음</li>
+        <li>뚝배기불고기</li>
+        <li>민트초코</li>
+    </ol>
+    <ol style="list-style-type: hangul">
+        <li>라면</li>
+        <li>돈까스</li>
+        <li>제육볶음</li>
+        <li>뚝배기불고기</li>
+        <li>민트초코</li>
+    </ol>
+
+    <h2>목록 중첩하기</h2>
+    <p>목록을 구성하는 요소들을 구조화된 정보형태로 나타낼때 주로 사용</p>
+    <p>이런 경우 목록 속에 또 다른 목록을 포함시킴</p>
+
+    <h3>나의 점심 메뉴</h3>
+    <ul>
+        <li>분식
+            <ul>
+                <li>면류</li>
+                <li>김밥</li>
+                <li>떡볶이</li>
+            </ul>
+        </li>
+        <li>한식</li>
+            <ul>
+                <li>밥류
+                    <ul>
+                        <li>국밥</li>
+                        <li>비빕밥</li>
+                        <li>솥밥</li>
+                    </ul>
+                </li>
+                <li>면류
+                    <ul>
+                        <li>냉면</li>
+                        <li>잔치국수</li>
+                    </ul>
+                </li>
+                <li>고기류
+                <ul>
+                    <li>불고기</li>
+                    <li>제육볶음</li>
+                    <li>닭갈비</li>
+                    <li>찜닭</li>
+                </ul>
+                </li>
+            </ul>
+        <li>중식</li>
+            <ul>
+                <li>짜장면</li>
+                <li>짬뽕</li>
+                <li>탕수육</li>
+            </ul>
+        <li>양식</li>
+            <ul>
+                <li>피자</li>
+                <li>파스타</li>
+                <li>리조또</li>
+            </ul>
+    </ul>
+
+
+    <p></p>
+    <p></p>
+
+
+</body>
+</html>
