@@ -6,16 +6,47 @@
 </head>
 <body>
     <h1>사원 데이터 조회</h1>
-    <p>사원 번호 : {{ emp.empid }}</p>
-    <p> 이름 : {{ emp.fname }}</p>
-    <p> 성 : {{ emp.lname }}</p>
-    <p> 이메일 : {{ emp.email }}</p>
-    <p> 전화번호 : {{ emp.phone }}</p>
-    <p> 입사일 : {{ emp.hdate }}</p>
-    <p> 직책 : {{ emp.jobid }}</p>
-    <p> 급여 : {{ emp.sal }}</p>
-    <p> 수당 : {{ emp.comm }}</p>
-    <p>매니저 번호 : {{ emp.mgrid }}</p>
-    <p>부서 번호 : {{ emp.deptid }}</p>
+<!--    <p>사원 번호 : {{ emp.empid }}</p>-->
+<!--    <p> 이름 : {{ emp.fname }}</p>-->
+<!--    <p> 성 : {{ emp.lname }}</p>-->
+<!--    <p> 이메일 : {{ emp.email }}</p>-->
+<!--    <p> 전화번호 : {{ emp.phone }}</p>-->
+<!--    <p> 입사일 : {{ emp.hdate }}</p>-->
+<!--    <p> 직책 : {{ emp.jobid }}</p>-->
+<!--    <p> 급여 : {{ emp.sal }}</p>-->
+<!--    <p> 수당 : {{ emp.comm }}</p>-->
+<!--    <p>매니저 번호 : {{ emp.mgrid }}</p>-->
+<!--    <p>부서 번호 : {{ emp.deptid }}</p>-->
+
+    <table border="1" cellpadding="5" cellspacing="0">
+        <colgroup>
+            <col width="100px">
+            <col width="100px">
+            <col width="100px">
+            <col width="100px">
+            <col width="100px">
+            <col width="100px">
+            <col width="100px">
+            <col width="100px">
+            <col width="100px">
+            <col width="100px">
+            <col width="100px">
+
+        </colgroup>
+        <tr align="center">
+            <th>사원 번호</th><th>이름</th><th>성</th><th>이메일</th>
+            <th>전화번호</th><th>입사일</th><th>직책</th><th>급여</th>
+            <th>수당</th><th>매니저 번호</th><th>부서 번호</th>
+        </tr>
+        <tr align="center">
+            <td>{{ emp.empid }}</td><td>{{ emp.fname }}</td><td>{{ emp.lname }}</td>
+            <td>{{ emp.email }}</td><td>{{ emp.phone }}</td><td>{{ emp.hdate }}</td>
+            <td>{{ emp.jobid }}</td><td>{{ emp.sal }}</td><td>{{ emp.comm }}</td>
+            <td>{{ emp.mgrid }}</td><td>{{ emp.deptid }}</td>
+        </tr>
+    </table>
 </body>
 </html>
+
+
+
