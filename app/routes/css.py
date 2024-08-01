@@ -26,3 +26,11 @@ async def text(req: Request):
 @css_router.get('/box')
 async def box(req: Request):
     return templates.TemplateResponse('css/04box.html', {'request': req})
+
+@css_router.get('/list')
+async def list(req: Request):
+    return templates.TemplateResponse('css/05list.html', {'request': req})
+
+@css_router.get('/position')
+async def position(req: Request):
+    return templates.TemplateResponse('css/06position.html', {'request': req})
