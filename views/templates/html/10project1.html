@@ -16,7 +16,7 @@
             text-align: center; padding: 8px 0;
             margin-left: 20px; float: left; }
 
-        header ul { list-style: none; padding: 0; float: right; margin-right: 10px }
+        header ul { list-style: none; padding: 0; float: right; margin-right: 20px }
         header ul li { display: inline-block; padding: 0 1px; }
         header ul li:after { content: ' |'; }
         header ul li:last-child:after { content: '';  }
@@ -39,7 +39,22 @@
         main { border: 1px solid darkviolet; }
 
         /* section #1 */
-        section:first-child
+        section:first-child { height: 280px; }
+        aside { width: 23%; float: left; margin-left: 20px;
+            }
+        aside ul { border: 3px solid dimgray; list-style: none; padding: 0; }
+        aside li { padding: 8px 12px; border-bottom: 1px solid silver; }
+        aside li:last-child { border: none; }
+
+
+        #banner { width: 72%; float: right; margin-right: 20px;
+            border: 3px solid dimgray; margin-top: 16px; height: 268px; }
+        #banner p { text-align: center; margin-top: 125px; }
+        #banner ul { list-style: none; padding: 0; float: right; margin:65px 18px; }
+        #banner ul li { display: inline; padding:5px 10px;
+                background: #cccccc; margin:5px; }
+
+
 
         /* section #2 */
         section:last-child { height: 250px; }
@@ -59,7 +74,7 @@
         footer ul { float: left; list-style: none;
             margin-bottom: 80px; margin-left: 3.5%; }
         footer ul h3 { margin: 0; }
-        footer .copy { text-align: center; }
+        footer .copy { text-align: center;}
 
 
     </style>
@@ -104,7 +119,7 @@
                 <ul><li>1</li><li>2</li><li>3</li><li>4</li></ul>
             </div>
         </section>
-        <section>
+        <section class="clear">
             <div id="products">
                 <h2>Today's Specials</h2>
                 <ul>
