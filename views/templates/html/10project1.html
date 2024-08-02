@@ -20,7 +20,7 @@
         header { border: 1px solid darkred; height: 100px; }
 
         header h1 { background: #cccccc; width: 150px;
-            text-align: center; padding: 7px 0;
+            text-align: center; padding: 8px 0;
             margin-left: 20px; float: left; }
 
         header ul { list-style: none; padding: 0; float: right; margin-right: 10px }
@@ -33,7 +33,14 @@
 
 
         /* nav */
-        nav { border: 1px solid darkgreen;  }
+        nav { border: 1px solid darkgreen; background: #cccccc; height: 35px; }
+        nav input { border: 1px solid dimgray; margin-left: 20px;
+            width: 300px; padding: 5px; }
+        nav select { width: 150px; padding: 5px; }
+        nav button { width: 130px; background: #999999; color: white;
+                font-size: 16px; border-radius: 8px; padding: 2px; }
+
+        .navgroup { height: 35px; display: table-cell; vertical-align: middle; }
 
         /* main */
         main { border: 1px solid darkviolet; }
@@ -85,7 +92,7 @@
 <body>
 <div id="container">
     <header>
-        <h1>로고</h1>
+        <h1>LOGO</h1>
         <ul>
             <li>contact</li>
             <li>store locator</li>
@@ -96,11 +103,13 @@
             <a href="#">Create Account</a></div>
     </header>
     <nav class="clear">
+        <div class="navgroup">
         <input type="text" name="search">
         <select name="findtype">
             <option>Category</option>
         </select>
         <button type="button" id="findbtn">SEARCH</button>
+        </div>
     </nav>
     <main>
         <section>
