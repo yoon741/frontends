@@ -5,13 +5,6 @@
     <title>project1</title>
     <style>
 
-/*        a:link { color: dimgrey;}*/
-/*        a:visited { color: black; text-decoration: none }*/
-/*        a:hover { color: gainsboro; text-decoration: underline }*/
-/*        a:active { color: orange; }*/
-
-/*        hr { border: 1px solid black; }*/
-
         /* header, nav, main, footer등을
          중앙에 배치하기 위해 컨테이너 요소 생성 */
         #container { width: 1080px; border: 1px solid red; margin: 0 auto; }
@@ -47,45 +40,10 @@
 
         /* footer */
         footer { border: 1px solid darkcyan; }
+        footer ul { float: left; list-style: none; margin-bottom: 80px; }
+        footer ul h3 { margin: 0; }
+        footer .copy { text-align: center; }
 
-        /*#minimenu { width: 400px; height: 50px;*/
-        /*    position: absolute; top: 0; right: 0px; }*/
-        /*#minimenu li { display: table-cell;*/
-        /*    padding: 5px 5px; }*/
-        /*#minimenu li:first-child:after { content: '|'; padding-left: 10px; }*/
-        /*#minimenu li:nth-child(2):after { content: '|'; padding-left: 10px; }*/
-        /*#minimenu li:nth-child(3):after { content: '|'; padding-left: 10px; }*/
-
-        /*#logo { width: 20%; height: 100px;*/
-        /*    margin: 15px; color: dimgrey;*/
-        /*    background: gainsboro;*/
-        /*    font-size: 65%;  float:left; display: flex; justify-content: center; align-items: center; }*/
-        /*!*#logotext { position: relative; top: 5%; left: 55%; }*!*/
-
-        /*#login { width: 50%; heigth: 100px;*/
-        /*    background: white; float:left; position: relative; }*/
-        /*#logintext { width: 40%; heigth:40px;*/
-        /*    position: absolute; top: 73px; left: 0px; }*/
-
-        /*.clearfix { clear: both; }*/
-
-        /*nav { width: 100%; height: 40px; background: gainsboro; }*/
-        /*#search { width: 350px; height: 20px; margin: 7px;*/
-        /*    border: 2px solid dimgrey; }*/
-        /*#findtype { width: 200px; height: 25px;*/
-        /*    border: 2px solid dimgrey; }*/
-        /*#findbtn { width: 120px; height: 25px;*/
-        /*    border: 2px solid dimgrey; background: dimgrey; color: gainsboro; }*/
-
-        /*#category { width: 24%; height: 210px; list-style-type: none;*/
-        /*    background: white; border: 3px solid dimgray; float: left; margin-left: 20px; }*/
-        /*#category li { width: 100%; height: 28px; left:30px; !*font-weight: bold;*!*/
-        /*    background: white; border: 1px solid gainsboro; }*/
-
-        /*#banner { width: 62%; height: 210px; background: white; float: right;*/
-        /*    color: black; border: 3px solid dimgray;*/
-        /*    display: flex; justify-content: center; align-items: center;*/
-        /*    margin-top: 20px; margin-right: 20px; }*/
 
     </style>
 </head>
@@ -162,30 +120,30 @@
         </section>
     </main>
     <footer>
-        <div>
-            <ul>
-                <li><h3>ABOUT US</h3></li>
-                <li>Company</li>
-                <li>News</li>
-                <li>Jobs</li>
-                <li>Policies</li>
-                <li>Contact</li>
-            </ul>
-            <ul>
-                <li><h3>SOCIAL</h3></li>
-                <li>Facebook</li>
-                <li>Twitter</li>
-                <li>Try our app</li>
-            </ul>
-            <ul>
-                <li><h3>Service</h3></li>
-                <li>FAQ</li>
-                <li>Live Support</li>
-                <li>Site map</li>
-            </ul>
-        </div>
-        <div>Copyrights &copy; 2024. zzyzzy. All Rights Reserved.</div>
-    </footer>
+    <div>
+        <ul>
+            <li><h3>ABOUT US</h3></li>
+            <li>Company</li>
+            <li>News</li>
+            <li>Jobs</li>
+            <li>Policies</li>
+            <li>Contact</li>
+        </ul>
+        <ul>
+            <li><h3>SOCIAL</h3></li>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Try our app</li>
+        </ul>
+        <ul>
+            <li><h3>SERVICE</h3></li>
+            <li>FAQ</li>
+            <li>Live Support</li>
+            <li>Site map</li>
+        </ul>
+    </div>
+    <div class="clear copy">Copyrights &copy; 2024. zzyzzy. All Rights Reserved.</div>
+</footer>
 </div>
 </body>
 </html>
