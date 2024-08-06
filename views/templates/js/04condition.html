@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>조건문</title>
+</head>
+<body>
+    <h1>조건문</h1>
+    <h2>개요</h2>
+    <p>특정 조건에 대한 만족여부에 따라 실행할 코드를 결정하는 기능</p>
+    <p>자바스크립트는 2가지의 조건문 제공 - if, switch</p>
+
+    <h2>코드블록</h2>
+    <p>0개 이상의 명령문을 중괄호({})로 묶은것</p>
+    <p>블록은 단독으로 사용할 수 있으나, 일반적으로
+        제어문이나 함수/객체 선언시 주로 사용</p>
+
+    <script>
+        {
+            document.write('<b>Hello, code block!!</b>');
+        }
+    </script>
+
+
+    <h2>if문</h2>
+    <p>조건을 만족할때만 지정한 코드블록을 실행함</p>
+    <p> if (조건식) { </p>
+    <p>     참일때 실행할 명령어(들) </p>
+    <p> } </p>
+    <script>
+        // 평균 점수가 60점 이상이면, '시험 합격!!' 을 출력
+        let jumsu = 68.5;
+
+        if (jumsu >= 60) {
+            document.write(`점수 : ${jumsu} - 합격!!`, '<br>');   // 조건이 참일때만 실행 거짓일 경우 출력되지 않음
+        }
+        if (jumsu < 60) {
+            document.write(`점수 : ${jumsu} - 불합격!!`, '<br>');   // 조건이 참일때만 실행 거짓일 경우 출력되지 않음
+        }
+
+        // 짝수, 홀수 여부 출력
+        // 2로 나눠 나머지가 0인지 여부 확인
+        let num = 14;
+
+        if (num % 2 === 0) {
+            document.write(`${num} - 짝수입니다!`, '<br>');
+        }
+        if (num % 2 !== 0) {
+            document.write(`${num} - 짝수입니다!`, '<br>');
+        }
+
+        //오전, 오후 구분하여 출력
+        let time = '08:14:36';
+        let hour = time[0] + time[1];
+
+        // hour >= 12로 작성해도 되지만 부등호 한개만 작성하기 위해 > 11로 작성
+        if (hour > 11) {
+            document.write(`오후 ${hour}시 입니다.`,'<br>');
+        }
+        if (hour < 12) {
+            document.write(`오전 ${hour}시 입니다.`,'<br>');
+        }
+
+        document.write(hour,'<br>');
+    </script>
+
+
+    <h2>if ~ else 문</h2>
+    <p>조건을 만족하면 if 아래의 코드블록을 실행하고,
+        만족하지 않을 경우 else 아래의 코드블록을 실행</p>
+    <p> if (조건식) { </p>
+    <p>     참일때 실행할 명령어(들) </p>
+    <p> } else { </p>
+    <p>     거짓일때 실행할 명령어(들) </p>
+    <p> } </p>
+
+    <script>
+        // 평균 점수가 60점 이상이면, '시험 합격!!' 을 출력
+        let jumsu = 68.5;
+
+        if (jumsu >= 60) {
+            document.write(`점수 : ${jumsu} - 합격!!`, '<br>');   // 조건이 참일때만 실행 거짓일 경우 출력되지 않음
+        } else {
+            document.write(`점수 : ${jumsu} - 불합격!!`, '<br>');   // 조건이 참일때만 실행 거짓일 경우 출력되지 않음
+        }
+
+        // 짝수, 홀수 여부 출력
+        // 2로 나눠 나머지가 0인지 여부 확인
+        let num = 14;
+
+        if (num % 2 === 0) {
+            document.write(`${num} - 짝수입니다!`, '<br>');
+        } else {
+            document.write(`${num} - 짝수입니다!`, '<br>');
+        }
+
+        //오전, 오후 구분하여 출력
+        let time = '08:14:36';
+        let hour = time[0] + time[1];
+
+        if (hour > 11) {
+            document.write(`오후 ${hour}시 입니다.`,'<br>');
+        } else {
+            document.write(`오전 ${hour}시 입니다.`,'<br>');
+        }
+    </script>
+    <h3>윤년프로그램</h3>
+    <script>
+        // 특정년도에 윤년여부를 출력
+        // 조건1 : 4로 나눠 떨어지고, 100으로는 나눠 떨어지지 않으면 윤년
+        // 조건2 : 400으로 나눠 떨어지면 윤년
+
+        // ex) 1988, 2000, 2008, 2020 : 윤년
+        //     1900, 2100, 2022 : 평년
+        // let year = prompt('년도는?')
+        //
+        // if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 ===0)) {
+        //     document.write(`${year}년은 윤년입니다.`, '<br>');
+        // } else {
+        //     document.write(`${year}년은 평년입니다.`, '<br>');
+        // }
+        //
+        // // 좀더 효율적인 방법 else문 안쓰는 방법.
+        // result = `${year}년은 평년입니다.`
+        // if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 ===0)) {
+        //     result = `${year}년은 윤년입니다.`;
+        // }
+        // document.write(result, '<br>');
+    </script>
+
+    <h3>로그인 기능 구현1</h3>
+    <script>
+        // 아이디와 비밀번호를 이용해서
+        // 로그인 기능 구현하기
+        // 로그인 관련메세지 - 회원인증에 성공/실패했습니다!
+        let userid = 'abc123';
+        let passwd = '987xyz';
+        //
+        // let uid = prompt('아이디를 입력하세요.')
+        // let pwd = prompt('비밀번호를 입력하세요.')
+        //
+        // result = `ID : ${uid}, passwd : ${pwd} 회원인증에 실패했습니다!`;
+        // if ((userid === uid) && (passwd === pwd)) {
+        //     result = `ID : ${uid}, passwd : ${pwd} 회원인증에 성공했습니다!`;
+        // }
+        // document.write(result, '<br>');
+    </script>
+
+
+    <h2>중첩 조건문</h2>
+    <p>if나 else 안에 또 다른 조건문을 포함한 조건문을 의미</p>
+    <p>단점은 코드 가독성이 떨어지므로 사용을 자제하는 것이 좋음</p>
+
+    <h3>로그인 기능 구현2</h3>
+    <script>
+        // 로그인 기능 구현하기 2
+        // uid = prompt('아이디를 입력하세요.')
+        // pwd = prompt('비밀번호를 입력하세요.')
+        //
+        // result = '';
+        // if (userid === uid) {
+        //     if (passwd === pwd) {
+        //         result = '로그인 성공!!';
+        //     } else {
+        //         result = '비밀번호가 틀려요!'
+        //     }
+        // } else {
+        //     result = '아이디가 틀립니다';
+        // }
+        // document.write(result,'<br>');
+    </script>
+
+
+    <h2>다중 조건문</h2>
+    <p>다중 조건에 대한 만족여부에 따라
+        코드블록을 실행하려면 if ~ else 뒤에
+        if ~ else 문을 더 추가함</p>
+
+    <script>
+        // 버스 기본요금 부과하기 - 나이를 입력받음
+        // 미취학 아동 (~7세) : 0원
+        // 어린이 (8~13) : 450원
+        // 청소년 (14~19) : 720원
+        // 일반 (20~) : 1200원
+        // 노인 (70~) : 0원
+        //
+        // let age = prompt('나이는?');
+        //
+        // result = '0원';
+        // if (age >= 70) {
+        //     result = '0원';
+        // } else if (age >= 20) {
+        //     result = '1200원';
+        // } else if (age >= 14) {
+        //     result = '720원';
+        // } else if (age >= 8) {
+        //     result = '450원';
+        // }
+        //
+        // document.write(`나이가 ${age}세 라면, 버스요금은 ${result}입니다.`,'<br>');
+
+
+    <!--    let name = prompt('이름은?');-->
+    <!--    let kor = Number(prompt('국어점수는?'));-->
+    <!--    let eng = Number(prompt('영어점수는?'));-->
+    <!--    let mat = Number(prompt('수학점수는?'));-->
+
+    <!--    let total = kor + eng + mat;-->
+    <!--    let avg = total / 3;-->
+
+    <!--    result = '가'-->
+    <!--    if (avg >= 90) {-->
+    <!--        result = '수';-->
+    <!--    } else if (avg >= 80) {-->
+    <!--        result = '우';-->
+    <!--    } else if (avg >= 70) {-->
+    <!--        result = '미';-->
+    <!--    } else if (avg >= 60) {-->
+    <!--        result = '양';-->
+    <!--    }-->
+    <!--    document.write(result,'<br>');-->
+    <!--</script>-->
+
+
+    <h2>조건식을 거짓으로 취급하는 값들</h2>
+    <p>false, 0, undefined, null, NaN, 빈문자열등은
+        조건식에서 참이 아닌 거짓으로 취급</p>
+
+    <script>
+        result = '거짓입니다!';
+
+        // if (false) {
+        // if (0) {
+        // if (undefined) {
+        // if (null) {
+        // if (NaN) {
+        if ('') {
+            result = '참입니다!'
+        }
+
+        document.write(result,'<br>');
+
+
+    </script>
+
+    <h2>switch</h2>
+    <p>다중 조건 if문을 가독성 있게 작성한 조건문</p>
+    <p>switch의 표현식을 평가하여 그 값의 일치여부에 따라
+        case문 아래의 코드 블록을 실행하는 구조</p>
+    <p>표현식의 평가값과 일치하는 case가 없는 경우
+        default문의 코드블록을 실행함</p>
+    <p>단, 표현식의 평가값과 일치하는 case문이 실행되더라도
+        break문이 없으면, switch문이 중단되지 않고
+        나머지 case문을 실행하게 됨 - full through</p>
+
+    <p>switch(조건식) {</p>
+    <p>   case 값1: 코드블록; break; </p>
+    <p>   case 값2: 코드블록; break; </p>
+    <p>   ....                      </p>
+    <p>   default: 코드블록; break; </p>
+    <p>}</p>
+
+    <script>
+        // 짝수, 홀수 여부 출력
+        // num = 16;
+        // result = '';
+        //
+        // switch (num % 2) {
+        //     case 0: result = '짝수입니다!'; break;
+        //     default: result = '홀수입니다!'; break;
+        // }
+        // document.write(result,'<br>');
+    </script>
+
+
+    <script>
+        //오전, 오후 구분하여 출력
+        time = '11:14:36';
+        hour = time[0] + time[1];
+        result= '';
+        // if (hour > 11) {
+        //     document.write(`오후 ${hour}시 입니다.`,'<br>');
+        // } else {
+        //     document.write(`오전 ${hour}시 입니다.`,'<br>');
+        // }
+        // switch (hour > 11) {  // js에서만 가능
+        //     case false: result = '오전입니다!'; break;
+        //     case true: result = '오후입니다!'; break;
+        // }
+        // document.write(result,'<br>');
+
+        switch (true) {
+            case hour > 11: result = '오후입니다!'; break;
+            default: result = '오전입니다!'; break;
+        }
+        document.write(result,'<br>');
+
+        switch(parseInt(hour/12)) {
+            case 0: result = '오전입니다!'; break;
+            case 1: result = '오후입니다!'; break;
+        }
+        document.write(result,'<br>');
+    </script>
+
+    <script>
+        // 월, 윤년여부(Y/N)를 입력하면 해당 월의 마지막 날을 출력
+        // 1,3,5,7,8,10,12 - 31일
+        // 4,6,9,11 - 30일
+        // 2 - 윤년여부에 따라 28(N)일 or 29(Y)일
+        let month = 2;
+        let isLeapYear = '예'
+        let lastDay = 28;
+
+        switch (month) {
+            case 1: case 3: case 5: case 7:
+            case 8: case 10: case 12: lastDay = 31; break;
+            case 4: case 6: case 9: case 11: lastDay = 30; break;
+            case 2: if (isLeapYear === '예') lastDay = 29; break;
+            default: lastDay = '월을 잘못입력하셨습니다!!'; break;
+        }
+
+        document.write(`${month}월은 ${lastDay}일 까지 입니다. (윤년여부: ${isLeapYear})`, '<br>');
+    </script>
+
+    <p>javascript 한정으로 switch의 case문에
+        비교 연산자를 이용한 범위를 검사하는 코드를 작성할 수도 있음 <br>
+        (https://stackoverflow.com/questions/5619832/switch-on-ranges-of-integers-in-javascript)</p>
+
+    <h2>if vs switch</h2>
+    <p>if문의 경우 조건식 검사는 위에서 아래로 순차적으로 진행됨</p>
+    <p>운이 나빠서, 만족하는 조건식이 맨 아래에 있다면
+        위의 조건식 모두를 비교한 뒤에야 비로소 도달하게 됨</p>
+    <p>하지만, switch문은 평가식의 결과값을 판단하고,
+        해당하는 case절로 바로 찾아가기 때문에 if문보다 효율이 좋음</p>
+
+</body>
+</html>
