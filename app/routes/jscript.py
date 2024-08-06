@@ -23,3 +23,6 @@ async def operator(req: Request):
 @jscript_router.get('/condition')
 async def condition(req: Request):
     return templates.TemplateResponse('js/04condition.html', {'request': req})
+@jscript_router.get('/loof')
+async def loof(req: Request):
+    return templates.TemplateResponse('js/05loof.html', {'request': req})
