@@ -76,6 +76,10 @@
             }
         };
         let getDong = () => {
+            // 기존 읍면동 항목 제거
+            while (dong.firstChild) {
+                dong.removeChild(dong.firstChild);
+            }
             // 타이틀
             opt = document.createElement('option');
             txt = document.createTextNode('읍/면/동');
@@ -83,7 +87,7 @@
             dong.appendChild(opt);
 
             // 읍면동 목록
-            for (let val of dongdata[gugun.selectedIndex]) {
+            for (let val of dongdata[sido.selectedIndex - 1][gugun.selectedIndex - 1]) {
                 opt = document.createElement('option');
                 txt = document.createTextNode(val);
                 opt.appendChild(txt);
