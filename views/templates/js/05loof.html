@@ -109,8 +109,8 @@
         let cnt = 0;
         for (let i = 1; i <= 1000; ++i) {
             if (sum > 10000) break;
-            sum = sum + i;
-            cnt = i;
+            sum = sum + i;  // 더하는 수(적립된다고 생각하면 됨 계속 더해지는 수)
+            cnt = i;  // 증가하는 수
         }
         document.write(`${sum}, ${cnt}`, '<br>');
     </script>
@@ -124,7 +124,7 @@
     <p>}</p>
 
     <script>
-        const person = { // 객체변수
+        const person = { //const: 상수를 정의하는데 사용. 객체변수(재할당 불가능)
           name: '혜교',
           age: 99,
           email: 'abc123@987xyz.co.kr'
