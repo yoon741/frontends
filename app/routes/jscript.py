@@ -12,6 +12,7 @@ async def index(req: Request):
 @jscript_router.get('/hello')
 async def hello(req: Request):
     return templates.TemplateResponse('js/01hello.html', {'request': req})
+
 @jscript_router.get('/type')
 async def type(req: Request):
     return templates.TemplateResponse('js/02type.html', {'request': req})
@@ -23,6 +24,7 @@ async def operator(req: Request):
 @jscript_router.get('/condition')
 async def condition(req: Request):
     return templates.TemplateResponse('js/04condition.html', {'request': req})
+
 @jscript_router.get('/loof')
 async def loof(req: Request):
     return templates.TemplateResponse('js/05loof.html', {'request': req})
@@ -32,7 +34,7 @@ async def array(req: Request):
     return templates.TemplateResponse('js/06array.html', {'request': req})
 
 @jscript_router.get('/while')
-async def while1(req: Request):
+async def whiles(req: Request):
     return templates.TemplateResponse('js/07while.html', {'request': req})
 
 @jscript_router.get('/function')
@@ -44,7 +46,7 @@ async def callback(req: Request):
     return templates.TemplateResponse('js/09callback.html', {'request': req})
 
 @jscript_router.get('/except')
-async def except1(req: Request):
+async def excepts(req: Request):
     return templates.TemplateResponse('js/10except.html', {'request': req})
 
 @jscript_router.get('/bom')
@@ -66,3 +68,7 @@ async def form(req: Request):
 @jscript_router.get('/ajax')
 async def ajax(req: Request):
     return templates.TemplateResponse('js/15ajax.html', {'request': req})
+
+@jscript_router.get('/zipcode')
+async def zipcode(req: Request):
+    return templates.TemplateResponse('js/16zipcode.html', {'request': req})
