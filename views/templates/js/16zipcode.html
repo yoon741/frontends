@@ -8,9 +8,9 @@
     <h1>zipcode</h1>
     <h2>우편번호 검색</h2>
     <div>
-        <select id="sido" onchange=""></select>
-        <select id="gugun" onchange=""></select>
-        <select id="dong" onchange=""></select>
+        <select id="sido" onchange="getGugun()"></select>
+        <select id="gugun" onchange="getDong()"></select>
+        <select id="dong" onchange="getAddress()"></select>
     </div>
 
 
@@ -53,6 +53,12 @@
         };
 
         let getGugun = () => {
+            // 기존 시군구 항목 제거
+            while (gugun.firstChild) {
+                gugun.removeChild(gugun.firstChild);
+            }
+
+
             // 타이틀
             opt = document.createElement('option');
             txt = document.createTextNode('시/군/구');
@@ -60,11 +66,13 @@
             gugun.appendChild(opt);
 
             // 시군구 목록
-            for (let val of gugundata[0]) {
-                opt = document.createElement('option');
-                txt = document.createTextNode(val);
-                opt.appendChild(txt);
-                gugun.appendChild(opt);
+            if (sido.selectedIndex > 0) {
+                for (let val of gugundata[sido.selectedIndex - 1]) {
+                    opt = document.createElement('option');
+                    txt = document.createTextNode(val);
+                    opt.appendChild(txt);
+                    gugun.appendChild(opt);
+                }
             }
         };
         let getDong = () => {
@@ -75,7 +83,7 @@
             dong.appendChild(opt);
 
             // 읍면동 목록
-            for (let val of dongdata[0][0]) {
+            for (let val of dongdata[gugun.selectedIndex]) {
                 opt = document.createElement('option');
                 txt = document.createTextNode(val);
                 opt.appendChild(txt);
