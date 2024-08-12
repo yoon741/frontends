@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>우편번호 검색</title>
+
+    <style>
+        select { padding : 5px; }
+    </style>
 </head>
 <body>
     <h1>zipcode</h1>
@@ -11,6 +15,7 @@
         <select id="sido" onchange="getGugun()"></select>
         <select id="gugun" onchange="getDong()"></select>
         <select id="dong" onchange="getAddress()"></select>
+        <p id="myaddr"></p>
     </div>
 
 
@@ -54,8 +59,8 @@
 
         let getGugun = () => {
             // 기존 시군구 항목 제거
-            while (gugun.firstChild) {
-                gugun.removeChild(gugun.firstChild);
+            while (gugun.firstChild) { // 시군구에 항목이 있으면
+                gugun.removeChild(gugun.firstChild); // 자식요소 제거
             }
 
 
@@ -75,10 +80,11 @@
                 }
             }
         };
+
         let getDong = () => {
             // 기존 읍면동 항목 제거
-            while (dong.firstChild) {
-                dong.removeChild(dong.firstChild);
+            while (dong.firstChild) {  // 읍면동에 항목이 있으면
+                dong.removeChild(dong.firstChild);  // 자식요소 제거
             }
             // 타이틀
             opt = document.createElement('option');
@@ -87,13 +93,23 @@
             dong.appendChild(opt);
 
             // 읍면동 목록
-            for (let val of dongdata[sido.selectedIndex - 1][gugun.selectedIndex - 1]) {
-                opt = document.createElement('option');
-                txt = document.createTextNode(val);
-                opt.appendChild(txt);
-                dong.appendChild(opt);
+            if (gugun.selectedIndex > 0) {
+                for (let val of dongdata[sido.selectedIndex - 1][gugun.selectedIndex - 1]) {
+                    opt = document.createElement('option');
+                    txt = document.createTextNode(val);
+                    opt.appendChild(txt);
+                    dong.appendChild(opt);
+                }
             }
         };
+
+        let getAddress = () => {
+            if (dong.selectedIndex > 0) {
+                let result = `선택한 주소 : ${sido.value} ${gugun.value} ${dong.value}`;
+                let myaddr = document.querySelector('#myaddr');
+                myaddr.textContent = result;
+            }
+        }
 
         getSido();
         getGugun();
